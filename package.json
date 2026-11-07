@@ -1,0 +1,19 @@
+{
+  "name": "back-in-stock-alerts",
+  "version": "1.0.0",
+  "description": "Back-in-stock email alerts: exactly-once notifications, safe under retries, duplicates and crashes.",
+  "main": "src/server.js",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "express": "^4.21.2"
+  }
+}
