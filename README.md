@@ -2,7 +2,9 @@
 
 Customers leave their email + a product SKU on an embeddable form. When the store's stock API confirms the SKU is back, every customer with an open request gets **exactly one** email. An admin page shows every request, its status and when it was notified.
 
-Node.js 20 · Express · better-sqlite3 (one file) · server-rendered HTML, no frontend framework.
+Express · better-sqlite3 (one file) · server-rendered HTML, no frontend framework.
+
+**Requirements:** Node.js 22.9+ for local runs (`npm start` uses `--env-file-if-exists`). The Docker image is self-contained and runs on `node:20-alpine`.
 
 ## Environment variables
 
@@ -29,8 +31,8 @@ See `.env.example`.
 ## Run locally
 
 ```sh
-npm i && npm start            # reads real environment variables
-node --env-file=.env src/server.js   # or load a .env file (Node 20.6+)
+npm i && npm start            # loads .env if present, else uses real environment variables
+node --env-file=.env src/server.js   # same, but fails if .env is missing
 npm test
 ```
 
